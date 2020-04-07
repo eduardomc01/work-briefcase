@@ -138,7 +138,7 @@ display: none;
 
 #container {
     
-    background: url("src/logo-minimalista.gif");
+    background: url("/src/logo-minimalista.gif");
     background-position: center center;
     background-size: cover;
     height: 50rem;
