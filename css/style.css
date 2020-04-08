@@ -153,6 +153,7 @@ display: none;
     position: fixed;
     float: right;
     border-radius: 100%;
+    list-style: none;
     cursor: pointer;
 }
 
