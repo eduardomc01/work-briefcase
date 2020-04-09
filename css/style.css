@@ -141,6 +141,7 @@ display: none;
     height: 50%;
     background-size: cover;
     border-top: none;
+    display: none;
     box-shadow: 0 4px 4px 4px rgba(1,1,1,.3);
 }
 
@@ -155,6 +156,19 @@ display: none;
     border-radius: 100%;
     list-style: none;
     cursor: pointer;
+    text-align: center;
+    width: 4%;
+}
+
+.moon {
+    bottom: 40%;
+    right: 2%;
+
+}
+
+.sun {
+    bottom: 30%;
+    right: 2%;
 }
 
 .gm {
@@ -171,3 +185,6 @@ display: none;
     bottom: 2%;
     right: 2%;
 }
+
+
+
