@@ -160,10 +160,20 @@ display: none;
     width: 4%;
 }
 
+.btnSessionOut {
+    background-color: brown;
+    bottom: 50%;
+    right: 2%;
+}
+
+.btnShowButtons {
+    bottom: 2%;
+    left: 2%;
+}
+
 .moon {
     bottom: 40%;
     right: 2%;
-
 }
 
 .sun {
