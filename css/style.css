@@ -274,7 +274,8 @@ input, button {
 
 
 /* Responssive menu */
-@media screen and (max-width: 600px) {
+@media only screen and (max-device-width: 736px) {
+
   .menu ul li  {
     float: right;
     text-align: center;
