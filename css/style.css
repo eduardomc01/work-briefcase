@@ -1,5 +1,5 @@
+/*background-color: grey;*/
 *{
-    /*background-color: grey;*/
     margin: 0;
     padding: 0;
 }
@@ -8,8 +8,13 @@ body {
     margin: 1%;
 }
 
-/* Scrollbar out */
+#container .sub-container {
+    background-color: rgba(1, 1, 1, 0.116);
+    height: 50rem;
+    
+}
 
+/* Scrollbar out */
 ::-webkit-scrollbar{
     display: none;
 }
@@ -25,8 +30,10 @@ body {
     background-color: rgba(41, 126, 74, 0.8);
     list-style: none;
     overflow: hidden;
+    text-decoration: none;    
     box-shadow: 0 4px 4px 4px rgba(1, 1, 1, .3);
 }
+
 
 .menu ul li  {
     display: inline;
@@ -36,9 +43,13 @@ body {
     cursor: pointer;
 }
 
-.menu ul li a {
+.menu ul a {
     text-decoration: none;
     color: white;
+}
+
+.menu li {
+    display: block;
 }
 
 .menu ul .right {
@@ -48,20 +59,32 @@ body {
 .menu ul li:hover{
     background-color: black;
     transition: .9s;
+    list-style: none;
+}
+
+#menuMovil {
+    display: none;
 }
 
 /* SLIDER TOOLBAR */
+
 .card {
     margin: 1%;
     width: 31%;
     float: left;
-    box-shadow: 5px 5px 5px 5px grey;
+    box-shadow: 0 4px 4px 4px rgba(1, 1, 1, .3);
 }
 
 .card img {
     width: 100%;
     filter: blur(.7px) brightness(.6);
 }
+
+.card table img {
+    width: 20%;
+}
+
+
 
 .card .carousel-caption {
     text-shadow: black 1px 3px 3px;
@@ -145,24 +168,31 @@ display: none;
     box-shadow: 0 4px 4px 4px rgba(1,1,1,.3);
 }
 
-/* Contact */
+/* Contacts */
 
 .contact {
-    background-color: black;
-    color: white;
-    padding: 1%;
+    color: black;
+    padding: 10px;
     position: fixed;
     float: right;
-    border-radius: 100%;
     list-style: none;
     cursor: pointer;
     text-align: center;
     width: 4%;
 }
 
+.contact:hover {
+    color: rgba(41, 126, 74, 0.8);
+}
+
 .btnSessionOut {
-    background-color: brown;
-    bottom: 50%;
+    color: brown;
+    bottom: 52%;
+    right: 2%;
+}
+
+.btnShowLogin {
+    position: static;
     right: 2%;
 }
 
@@ -171,23 +201,25 @@ display: none;
     left: 2%;
 }
 
+
+
 .moon {
-    bottom: 40%;
+    bottom: 42%;
     right: 2%;
 }
 
 .sun {
-    bottom: 30%;
+    bottom: 32%;
     right: 2%;
 }
 
 .gm {
-    bottom: 20%;
+    bottom: 22%;
     right: 2%;
 }
 
 .fb {
-    bottom: 11%;
+    bottom: 12%;
     right: 2%;
 }
 
@@ -196,5 +228,127 @@ display: none;
     right: 2%;
 }
 
+.signIn {
+    background-color: rgba(41, 126, 74, 0.8);
+    border-radius: 5%;
+    box-shadow: 0 10px 4px 4px rgba(1, 1, 1, .3);
+    text-align: center;
+    padding: 2%;
+    float: right;
+    width: 20%;
+}
+
+.signIn img {
+    width: 100%;
+    padding: 5%;
+}
+
+/* Inputs */
+input, button {
+    border: none;
+    padding: 2%;
+    width: 100%;
+    outline: none;
+    text-align: center;
+    border-radius: 0;
+}
+
+.signIn button {
+    padding: 5%;
+    border-radius: 50%;
+    width: 20%;
+    margin-top: 5%;
+}
+
+#addingPC {
+    padding: 5%;
+    border-radius: 50%;
+    width: 20%;
+    margin-top: 5%;
+}
+
+.card-move {
+    right: 0px;
+    left: 0px;
+}
 
 
+/* Responssive menu */
+@media screen and (max-width: 600px) {
+  .menu ul li  {
+    float: right;
+    text-align: center;
+    display: block;
+  }
+
+  .menu ul .right{
+      float: none;
+  }
+
+  .menu ul li {
+    float: none; 
+  }
+
+.menu ul #menuMovil {
+    display:block;
+}
+
+.menu ul a li {
+    display: none;
+}
+
+.signIn {
+    width: 100%;
+    text-align: center;
+}
+
+.signIn button {
+    width: 15%;
+}
+
+.movilCardInput{
+    margin-bottom: 100%;    
+}
+
+.movilCardTable{
+    width: 65%;    
+}
+
+.contact {
+    width: 8%;
+}
+
+.contact:hover {
+    color: orange
+}
+.btnSessionOut {
+    bottom: 2%;
+    right: 11%;
+}
+
+.btnShowButtons {
+    bottom: 2%;
+}
+
+.moon {
+    bottom: 63%;
+}
+
+.sun {
+    bottom: 47%;
+}
+
+.gm {
+    bottom: 32%;
+}
+
+.fb {
+    bottom: 17%;
+}
+
+.yt {
+    bottom: 2%;
+}
+
+
+}

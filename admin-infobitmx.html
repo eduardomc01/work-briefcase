@@ -14,78 +14,121 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
     <link rel="icon" href="src/main_logo.png">
 
-    <title> Home </title>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="js/firebase.js"></script>
+
+
+    <link rel="stylesheet" href="js/Notiflix-2.1.3/Minified/notiflix-2.1.3.min.css" />
+    <script src="js/Notiflix-2.1.3/AIO/notiflix-aio-2.1.3.js"></script>
+
+    <title> Administrator </title>
 </head>
 
 <body>
 
     <div class="menu">
         <ul>
-            <a href="index.html">
-                <li> <i class="fa fa-home fa-2x fa-fw" aria-hidden="true"></i> Home </li>
+            <a href="admin-infobitmx.html"></a>
+
+            <li id="menuMovil" style="display: block;">
+                <img src="src/main_logo.png" height="25px"></img>
+            </li>
             </a>
 
-            <a href="information-personal.html">
-                <li> <i class="fa fa-user fa-2x fa-fw" aria-hidden="true"></i> Who I am ? </li>
+            <a href="#">
+                <li> <i class="fa fa-users fa-2x fa-fw" aria-hidden="true"></i> </li>
             </a>
 
-            <a href="projects.html">
-                <li> <i class="fa fa-refresh fa-spin fa-2x fa-fw" aria-hidden="true"> </i> Projects / Work </li>
+            <a href="#">
+                <li> <i class="fa fa-refresh fa-spin fa-2x fa-fw" aria-hidden="true"> </i> </li>
             </a>
-
-            <li class="right"> <a> <i class="fa fa-info-circle fa-2x fa-fw" aria-hidden="true"></i> About </a> </li>
+            <a>
+                <li class="right"> <i class="fa fa-info-circle fa-2x fa-fw" aria-hidden="true"></i> </li>
+            </a>
         </ul>
     </div>
 
-    <a id="btnShowButtons">
-        <div class="contact btnShowButtons">
-            <i class="fa fa-eye fa-2x" aria-hidden="true"> </i>
-        </div>
-    </a>
-
-    <div id="moveAppearDisappear">
-
-        <a href="#">
-            <div class="contact btnSessionOut">
-                <i class="fa fa-sign-out fa-2x" aria-hidden="true"> </i>
+ 
+           
+            <div class="card movilCardInput card-move">
+                <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
+                <input type="text" id="name" placeholder="name"/>
+                <input type="text" id="model" placeholder="model" />
+                <input type="state" id="state" placeholder="state" />
+                <button class="btn btn-success" onclick="addRegister()"> <i class="fa fa-check fa-2x fa-fw"> </i>
+                </button>
             </div>
-        </a>
 
-        <a id="btn1">
-            <div class="contact sun">
-                <i class="fa fa-sun-o fa-2x" aria-hidden="true"> </i>
+            <div class="card movilCardTable">
+                <table class="table table-hover" id="dataTable" style="text-align: center;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th> Image </th>
+                            <th> Name </th>
+                            <th> Model </th>
+                            <th> State </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla">
+                    </tbody>
+                </table>
             </div>
-        </a>
 
-        <a id="btn2">
-            <div class="contact moon">
-                <i class="fa fa-moon-o fa-2x" aria-hidden="true"> </i>
+            <a id="btnShowButtons">
+                <div class="contact btnShowButtons">
+                    <i class="fa fa-eye fa-2x" aria-hidden="true"> </i>
+                </div>
+            </a>
+
+            <div id="moveAppearDisappear">
+
+                <a onclick="signOut()">
+                    <!-- Fix sign out with firebase -->
+                    <div class="contact btnSessionOut">
+                        <i class="fa fa-sign-out fa-2x" aria-hidden="true"> </i>
+                    </div>
+                </a>
+
+                <a id="btn1">
+                    <div class="contact sun">
+                        <i class="fa fa-sun-o fa-2x" aria-hidden="true"> </i>
+                    </div>
+                </a>
+
+                <a id="btn2">
+                    <div class="contact moon">
+                        <i class="fa fa-moon-o fa-2x" aria-hidden="true"> </i>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank">
+                    <div class="contact gm">
+                        <i class="fa fa-google fa-2x" aria-hidden="true"> </i>
+                    </div>
+                </a>
+
+                <a href="https://www.facebook.com/Oficialinfobitmx/" target="_blank">
+                    <div class="contact fb">
+                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"> </i>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCwUIxQaRlCTQONBEmUEmFEw" target="_blank">
+                    <div class="contact yt">
+                        <i class="fa fa-youtube fa-2x" aria-hidden="true"> </i>
+                    </div>
+                </a>
+
             </div>
-        </a>
 
-        <a href="#" target="_blank">
-            <div class="contact gm">
-                <i class="fa fa-google fa-2x" aria-hidden="true"> </i>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/Oficialinfobitmx/" target="_blank">
-            <div class="contact fb">
-                <i class="fa fa-facebook-official fa-2x" aria-hidden="true"> </i>
-            </div>
-        </a>
-
-        <a href="https://www.youtube.com/channel/UCwUIxQaRlCTQONBEmUEmFEw" target="_blank">
-            <div class="contact yt">
-                <i class="fa fa-youtube fa-2x" aria-hidden="true"> </i>
-            </div>
-        </a>
-
-    </div>
+  
 
 </body>
+
+
 
 </html>
