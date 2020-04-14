@@ -1,13 +1,3 @@
-/*
-apiKey: "AIzaSyD6D7MgiHx3_yyirQshet8z-OjM1dO9Hgk",
-authDomain: "infobitmx-27ef4.firebaseapp.com",
-databaseURL: "https://infobitmx-27ef4.firebaseio.com",
-projectId: "infobitmx-27ef4",
-storageBucket: "infobitmx-27ef4.appspot.com",
-messagingSenderId: "656712226417",
-appId: "1:656712226417:web:e00b46591f56cd4c4f2dd0",
-measurementId: "G-6P364MPRHB"
-*/
 
 firebase.initializeApp({
     apiKey: 'AIzaSyD6D7MgiHx3_yyirQshet8z-OjM1dO9Hgk',
@@ -17,7 +7,7 @@ firebase.initializeApp({
 
 var db = firebase.firestore();
 
-function signIn() {
+function signIn(event) {
 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -26,28 +16,27 @@ function signIn() {
 
         .then(function (result) {
 
-            Notiflix.Loading.Pulse(result.operationType + ': ' + result.user.email);
+            if (event.key = "enter") {
 
-            Notiflix.Loading.Remove(5000);
+                Notiflix.Loading.Init({ messageFontSize: "40px", svgSize: "30%" });
+                Notiflix.Loading.Pulse(result.operationType + ': ' + result.user.email);
+                Notiflix.Loading.Remove(5000);
 
-            setTimeout(function () {
+                setTimeout(function () {
 
-                window.location.replace("admin-infobitmx.html");
+                    window.location.replace("admin-infobitmx.html");
 
-            }, 5000);
-    
+                }, 5000);
+
+            }
+
         }).catch(function (error) {
 
             console.log(error.message);
-    
+
         });
-    
+
 }
-
-
-// var errorCode = error.code;
-// var errorMessage = error.message;
-//  console.log("\n ERROR1: " + errorCode + "\n ERROR2: " + errorMessage);
 
 
 function signOut() {
@@ -56,6 +45,7 @@ function signOut() {
 
         console.log("\n Sesion cerrada ");
 
+        Notiflix.Loading.Init({ messageFontSize: "40px", svgSize: "30%" });
         Notiflix.Loading.Pulse("Session out...");
         Notiflix.Loading.Remove(5000);
 
@@ -75,12 +65,13 @@ function signOut() {
 
 // Adding datas
 function addRegister() {
-    
+
     var name = document.getElementById("name").value;
     var model = document.getElementById("model").value;
     var state = document.getElementById("state").value;
 
     db.collection("users").add({
+
         imagen: 'https://image.flaticon.com/icons/svg/2493/2493283.svg',
         name: name,
         model: model,
@@ -88,14 +79,29 @@ function addRegister() {
 
     }).then(function (docRef) {
 
-        //console.log("Registro exitoso");
-        
-       Notiflix.Notify.Success(" Agregado ");
-       
+        Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
+        Notiflix.Notify.Success("Registro agregado !");
+
+
     }).catch(function (error) {
 
-        console.log("session cerrada");
+        console.log("Session cerrada");
 
+    });
+
+}
+
+
+function deleteRegister(keyRef) {
+
+    db.collection("users").doc(keyRef).delete().then(function() {
+
+        Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px"  });
+        Notiflix.Notify.Success("Registro borrado");
+      
+    }).catch(function(error) {
+
+      
     });
 
 }
@@ -116,6 +122,9 @@ window.onload = function () {
                 <td> ${doc.data().name} </td>
                 <td> ${doc.data().model} </td>
                 <td> ${doc.data().state} </td>
+                <td> 
+                    <button class="btn btn-danger" onClick="deleteRegister('${doc.id}')" > <i class="fa fa-times fa-2x"> </i> </button>
+                </td>
             </tr>
             `
         });

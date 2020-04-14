@@ -179,97 +179,56 @@ display: none;
     cursor: pointer;
     text-align: center;
     width: 4%;
+
+    z-index: 1;
 }
 
 .contact:hover {
     color: rgba(41, 126, 74, 0.8);
 }
 
-.btnSessionOut {
-    color: brown;
-    bottom: 52%;
-    right: 2%;
+.group-icons a {
+    display: inline-flex;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    
 }
 
-.btnShowLogin {
-    position: static;
-    right: 2%;
-}
-
-.btnShowButtons {
-    bottom: 2%;
-    left: 2%;
-}
-
-
-
-.moon {
-    bottom: 42%;
-    right: 2%;
-}
-
-.sun {
-    bottom: 32%;
-    right: 2%;
-}
-
-.gm {
-    bottom: 22%;
-    right: 2%;
-}
-
-.fb {
-    bottom: 12%;
-    right: 2%;
-}
-
-.yt {
-    bottom: 2%;
-    right: 2%;
+#btnShowIcons {
+    cursor: pointer;
 }
 
 .signIn {
     background-color: rgba(41, 126, 74, 0.8);
-    border-radius: 5%;
     box-shadow: 0 10px 4px 4px rgba(1, 1, 1, .3);
     text-align: center;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
     padding: 2%;
     float: right;
     width: 20%;
 }
 
 .signIn img {
-    width: 100%;
-    padding: 5%;
+    width: 80%;
 }
 
 /* Inputs */
-input, button {
+input {
     border: none;
-    padding: 2%;
+    padding: 4%;
     width: 100%;
     outline: none;
     text-align: center;
     border-radius: 0;
 }
 
-.signIn button {
-    padding: 5%;
-    border-radius: 50%;
-    width: 20%;
-    margin-top: 5%;
-}
-
-#addingPC {
-    padding: 5%;
-    border-radius: 50%;
-    width: 20%;
-    margin-top: 5%;
-}
-
-.card-move {
-    right: 0px;
-    left: 0px;
+footer .card {
+    text-align: center;
+    width: 98%;
+    bottom: 0;
+    position: relative;
 }
 
 
@@ -280,6 +239,7 @@ input, button {
     float: right;
     text-align: center;
     display: block;
+    font-size: 50px;
   }
 
   .menu ul .right{
@@ -298,57 +258,57 @@ input, button {
     display: none;
 }
 
+.card {
+    font-size: 40px;
+    width: auto;
+}
+
+.movilCardRegister {
+    width: 98%;
+}
+
+.movilCardRegister button {
+    font-size: 100%;
+}
+
+/* Projects */ 
+
+h3 {
+    font-size: 100%;
+}
+
+.card-body {
+    font-size:70%;
+}
+
+/*************/
+
+/* Sign In */
+
 .signIn {
     width: 100%;
     text-align: center;
 }
 
-.signIn button {
-    width: 15%;
+.signIn input {
+   font-size: 50px;
 }
 
-.movilCardInput{
-    margin-bottom: 100%;    
+.sign-out {
+    color: brown;
 }
 
-.movilCardTable{
-    width: 65%;    
+.moveAppearDisappear .contact {
+    margin: 2%;
+    width: 10%;
+    font-size: 50px;
 }
 
-.contact {
-    width: 8%;
-}
-
-.contact:hover {
-    color: orange
-}
-.btnSessionOut {
-    bottom: 2%;
-    right: 11%;
-}
-
-.btnShowButtons {
-    bottom: 2%;
-}
-
-.moon {
-    bottom: 63%;
-}
-
-.sun {
-    bottom: 47%;
-}
-
-.gm {
-    bottom: 32%;
-}
-
-.fb {
-    bottom: 17%;
-}
-
-.yt {
-    bottom: 2%;
+.btnShowButtons  {
+    bottom: 8%;
+    left: 2%;
+    display: block;
+    font-size: 50px;
 }
 
 
