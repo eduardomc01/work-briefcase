@@ -1,4 +1,4 @@
-
+/*
 $(document).ready(function () {
     $(document).button(function (event) {
 
@@ -7,12 +7,12 @@ $(document).ready(function () {
 
     });
 });
-
+*/
 
 $(document).ready(function () { /* When the page is load */
 
-    $("#fade-in-1, #fade-in-2, #fade-in-3, #fade-in-4, #fade-in-5").fadeIn(2000);
-    $("img").fadeIn(2000);
+    $("#fade-in-1, #fade-in-2, #fade-in-3, #fade-in-4, #fade-in-5").fadeIn("fast");
+    $("img").fadeIn("fast");
 
     if (localStorage.getItem("mode", "black") == "black"){
         $("body").css("background-color", "rgba(1,1,1,.8)");
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
     $("#menuMovil").click(function () {
 
-        $(".menu ul a li").slideToggle("slow");
+        $(".menu ul a li").slideToggle("fast");
 
     });
 
