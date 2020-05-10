@@ -73,7 +73,7 @@ function addRegister() {
 
     db.collection("users").add({
 
-        imagen: 'https://image.flaticon.com/icons/svg/2493/2493283.svg',
+        imagen: 'https://image.flaticon.com/icons/svg/2292/2292038.svg',
         name: name,
         model: model,
         state: state
@@ -104,7 +104,7 @@ function addService() {
 
     db.collection("services").add({
 
-        imagen: 'https://image.flaticon.com/icons/png/512/639/639365.png',
+        imagen: 'https://image.flaticon.com/icons/png/512/858/858114.png',
         service: service,
         price: price,
         comments: comments
