@@ -2,25 +2,24 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="icon" href="src/main_logo.png">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/icons/css/font-awesome.css">
     <link rel="stylesheet" href="css/icons/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/animations.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" href="src/main_logo.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
     <script src="js/firebase.js"></script>
-
 
     <link rel="stylesheet" href="js/Notiflix-2.1.3/Minified/notiflix-2.1.3.min.css" />
     <script src="js/Notiflix-2.1.3/AIO/notiflix-aio-2.1.3.js"></script>
@@ -47,28 +46,86 @@
             </a>
         </ul>
     </div>
+    
 
-    <div class="card movilCardRegister">
+    <div class="card register">
         <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
+        
         <input type="text" id="name" placeholder="name" />
         <input type="text" id="model" placeholder="model" />
-        <input type="state" id="state" placeholder="state" />
+        <input type="text" id="state" placeholder="state" />
         <button class="btn btn-success" onclick="addRegister()"> <i class="fa fa-check fa-2x fa-fw"> </i>
         </button>
     </div>
 
-    <div class="card movilCardTable">
-        <table class="table table-hover" id="dataTable" style="text-align: center;">
+
+    <div class="card register-services">
+        <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
+        <input type="text" id="service" placeholder="service" />
+        <input type="text" id="price" placeholder="price" />
+        <input type="text" id="comments" placeholder="comments" />
+        <button class="btn btn-success" onclick="addService()"> <i class="fa fa-check fa-2x fa-fw"> </i>
+        </button>
+    </div>
+
+
+    <div class="card register-other">
+        <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
+        <input type="text" id="other" placeholder="other" />
+        <input type="text" id="other" placeholder="other" />
+        <input type="text" id="other" placeholder="other" />
+        <button class="btn btn-success" onclick="addService()"> <i class="fa fa-check fa-2x fa-fw"> </i>
+        </button>
+    </div>
+    
+<!-- machines -->
+    <div class="card">
+        <table class="table" id="datatable">
             <thead class="thead-dark">
-                <tr>
-                    <th> Image </th>
-                    <th> Name </th>
-                    <th> Model </th>
-                    <th> State </th>
-                    <th> Actions </th>
-                </tr>
+            <tr>
+                <th>Imagen</th>
+                <th>Name</th>
+                <th>Model</th>
+                <th>State</th>
+                <th>Action</th>
+            </tr>
             </thead>
-            <tbody id="tabla">
+            <tbody id="table">
+
+            </tbody>
+        </table>
+    </div>
+
+<!-- services -->
+    <div class="card">
+        <table class="table" id="datatable">
+            <thead class="thead-dark">
+            <tr>
+                <th>Imagen</th>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Comment</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody id="tableService">
+
+            </tbody>
+        </table>
+    </div>
+
+<!--others-->
+    <div class="card">
+        <table class="table" id="datatable">
+            <thead class="thead-dark">
+            <tr>
+                <th>other</th>
+                <th>other</th>
+                <th>other</th>
+            </tr>
+            </thead>
+            <tbody id="table">
+
             </tbody>
         </table>
     </div>
@@ -121,6 +178,5 @@
     </footer>
 
 </body>
-
 
 </html>

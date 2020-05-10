@@ -80,9 +80,15 @@ body {
     filter: blur(.7px) brightness(.6);
 }
 
-.card table img {
-    width: 20%;
+
+.card table {
+    text-align: center;
 }
+
+.card table img {
+    width: 30%;
+}
+
 
 
 
@@ -263,11 +269,11 @@ footer .card {
     width: auto;
 }
 
-.movilCardRegister {
+.register, .register-services, .register-other {
     width: 98%;
 }
 
-.movilCardRegister button {
+.card button {
     font-size: 100%;
 }
 

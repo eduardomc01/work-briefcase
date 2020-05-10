@@ -39,6 +39,7 @@ function signIn(event) {
 }
 
 
+
 function signOut() {
 
     firebase.auth().signOut().then(function () {
@@ -83,6 +84,39 @@ function addRegister() {
         Notiflix.Notify.Success("Registro agregado !");
 
 
+
+
+    }).catch(function (error) {
+
+        console.log("Session cerrada");
+
+    });
+
+}
+
+
+// Adding datas - services
+function addService() {
+
+    var service = document.getElementById("service").value;
+    var price = document.getElementById("price").value;
+    var comments = document.getElementById("comments").value;
+
+    db.collection("services").add({
+
+        imagen: 'https://image.flaticon.com/icons/png/512/639/639365.png',
+        service: service,
+        price: price,
+        comments: comments
+
+    }).then(function (docRef) {
+
+        Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
+        Notiflix.Notify.Success("Registro agregado !");
+
+
+
+
     }).catch(function (error) {
 
         console.log("Session cerrada");
@@ -94,40 +128,117 @@ function addRegister() {
 
 function deleteRegister(keyRef) {
 
-    db.collection("users").doc(keyRef).delete().then(function() {
+    db.collection("users").doc(keyRef).delete().then(function () {
 
-        Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px"  });
-        Notiflix.Notify.Success("Registro borrado");
-      
-    }).catch(function(error) {
+        Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
+        Notiflix.Notify.Failure("Registro borrado");
 
-      
+    }).catch(function (error) {
+
+
     });
 
 }
 
 
+function deleteService(keyRef) {
+
+    db.collection("services").doc(keyRef).delete().then(function () {
+
+        Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
+        Notiflix.Notify.Failure("Registro borrado");
+
+    }).catch(function (error) {
+
+
+    });
+
+}
+
 // LEER DATOS 
 
-window.onload = function () {
+$(document).ready(function () {
 
-    var tabla = document.getElementById('tabla');
+    //var dataSet = { array: [] };
+
+    var table = document.getElementById('table');
     db.collection("users").onSnapshot((querySnapshot) => {
-        tabla.innerHTML = ``;
+        table.innerHTML = ``;
+
         querySnapshot.forEach((doc) => {
-            //console.log(`${doc.id} => ${doc.data().name}`);
-            tabla.innerHTML += `
+            /*
+            dataSet.array.push(
+                ['<img src=' + doc.data().imagen + '>',
+                doc.data().name,
+                doc.data().model,
+                doc.data().state,
+                '<button class="btn btn-danger" onClick="deleteRegister(' + doc.id + ')" > <i class="fa fa-times fa-2x"> </i> </button>']);
+            */
+
+            table.innerHTML += `
             <tr>
                <td> <img src=' ${doc.data().imagen}'> </td>
                 <td> ${doc.data().name} </td>
                 <td> ${doc.data().model} </td>
                 <td> ${doc.data().state} </td>
-                <td> 
+                <td>
                     <button class="btn btn-danger" onClick="deleteRegister('${doc.id}')" > <i class="fa fa-times fa-2x"> </i> </button>
                 </td>
             </tr>
             `
         });
+
+        /*
+        $('#datatable').dataTable({
+            "pagingType": "simple",
+           
+            "iDisplayLength": 5,
+            "language": {
+                "paginate": {
+                    "next": "Sig.",
+                    "previous": "Ant."
+                }
+            },
+
+            data: dataSet.array,
+
+            columns: [
+                { title: "Image" },
+                { title: "Name" },
+                { title: "Model" },
+                { title: "State" },
+                { title: "Actions" },
+            ]
+        });*/
+
     });
 
-}
+});
+
+
+
+$(document).ready(function () {
+
+    var table = document.getElementById('tableService');
+    db.collection("services").onSnapshot((querySnapshot) => {
+        table.innerHTML = ``;
+
+        querySnapshot.forEach((doc) => {
+
+            table.innerHTML += `
+       <tr>
+          <td> <img src=' ${doc.data().imagen}'> </td>
+           <td> ${doc.data().service} </td>
+           <td> ${doc.data().price} </td>
+           <td> ${doc.data().comments} </td>
+           <td>
+               <button class="btn btn-danger" onClick="deleteService('${doc.id}')" > <i class="fa fa-times fa-2x"> </i> </button>
+           </td>
+       </tr>
+       `
+        });
+
+
+    });
+
+});
