@@ -80,9 +80,12 @@ function addRegister() {
 
     }).then(function (docRef) {
 
+        //style="background-color: red; border-radius: 100%; padding: 9%;"
+
+        $("#notification").css("color","yellow").css("border-radius","100%");
+
         Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
         Notiflix.Notify.Success("Registro agregado !");
-
 
 
 
@@ -110,6 +113,10 @@ function addService() {
         comments: comments
 
     }).then(function (docRef) {
+
+        
+        $("#notification").css("color","yellow").css("border-radius","100%");
+
 
         Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
         Notiflix.Notify.Success("Registro agregado !");
@@ -182,7 +189,7 @@ $(document).ready(function () {
                 <td> ${doc.data().model} </td>
                 <td> ${doc.data().state} </td>
                 <td>
-                    <button class="btn btn-danger" onClick="deleteRegister('${doc.id}')" > <i class="fa fa-times fa-2x"> </i> </button>
+                    <button class="btn btn-danger" onClick="deleteRegister('${doc.id}')" > <i class="fa fa-trash-o fa-2x"> </i> </button>
                 </td>
             </tr>
             `
@@ -232,7 +239,7 @@ $(document).ready(function () {
            <td> ${doc.data().price} </td>
            <td> ${doc.data().comments} </td>
            <td>
-               <button class="btn btn-danger" onClick="deleteService('${doc.id}')" > <i class="fa fa-times fa-2x"> </i> </button>
+               <button class="btn btn-danger" onClick="deleteService('${doc.id}')" > <i class="fa fa-trash-o fa-2x"> </i> </button>
            </td>
        </tr>
        `

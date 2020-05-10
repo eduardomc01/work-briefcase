@@ -38,98 +38,125 @@
             </a>
 
             <a href="#">
-                <li> <i class="fa fa-users fa-2x fa-fw" aria-hidden="true"></i> </li>
+                <li> <i class="fa fa-bar-chart fa-2x fa-fw" aria-hidden="true"></i> </li>
             </a>
 
             <a>
-                <li class="right"> <i class="fa fa-info-circle fa-2x fa-fw" aria-hidden="true"></i> </li>
+                <li class="right"> <i class="fa fa-bell fa-2x fa-fw notify" id="notification" aria-hidden="true"></i> </li>
             </a>
+
         </ul>
     </div>
-    
 
-    <div class="card register">
-        <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
-        
-        <input type="text" id="name" placeholder="name" />
-        <input type="text" id="model" placeholder="model" />
-        <input type="text" id="state" placeholder="state" />
-        <button class="btn btn-success" onclick="addRegister()"> <i class="fa fa-check fa-2x fa-fw"> </i>
-        </button>
+    <div class="left">
+        <div class="card register">
+
+            <form>
+                <input type="text" id="name" placeholder="name" />
+                <input type="text" id="model" placeholder="model" />
+                <input type="text" id="state" placeholder="state" />
+                <button type="reset" class="btn btn-danger danger">
+                    <i class="fa fa-eraser fa-2x fa-fw"> </i>
+                </button>
+            </form>
+
+            <button class="btn btn-success" onclick="addRegister()">
+                <i class="fa fa-check fa-2x fa-fw"> </i>
+            </button>
+
+        </div>
+
+
+        <div class="card register-services">
+
+            <form>
+                <input type="text" id="service" placeholder="service" />
+                <input type="text" id="price" placeholder="price" />
+                <input type="text" id="comments" placeholder="comments" />
+                <button type="reset" class="btn btn-danger danger">
+                    <i class="fa fa-eraser fa-2x fa-fw"> </i>
+                </button>
+            </form>
+
+            <button class="btn btn-success" onclick="addService()"> <i class="fa fa-check fa-2x fa-fw"> </i>
+            </button>
+
+        </div>
+
+        <div class="card register-services">
+          
+            <form>
+                <input type="text" id="service" placeholder="@" />
+                <input type="text" id="price" placeholder="@" />
+                <input type="text" id="comments" placeholder="@" />
+                <button type="reset" class="btn btn-danger danger">
+                    <i class="fa fa-eraser fa-2x fa-fw"> </i>
+                </button>
+            </form>
+
+            <button class="btn btn-success" onclick=""> <i class="fa fa-check fa-2x fa-fw"> </i>
+            </button>
+
+        </div>
+
+
+        <!-- machines -->
+        <div class="card">
+            <table class="table" id="datatable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>State</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- services -->
+        <div class="card">
+            <table class="table" id="datatable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Service</th>
+                        <th>Price</th>
+                        <th>Comment</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableService">
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- other -->
+        <div class="card">
+            <table class="table" id="datatable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>@</th>
+                        <th>@</th>
+                        <th>@</th>
+                        <th>@</th>
+                        <th>@</th>
+                    </tr>
+                </thead>
+                <tbody id="tableService">
+
+                </tbody>
+            </table>
+        </div>
+
+
     </div>
-
-
-    <div class="card register-services">
-        <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
-        <input type="text" id="service" placeholder="service" />
-        <input type="text" id="price" placeholder="price" />
-        <input type="text" id="comments" placeholder="comments" />
-        <button class="btn btn-success" onclick="addService()"> <i class="fa fa-check fa-2x fa-fw"> </i>
-        </button>
-    </div>
-
-
-    <div class="card register-other">
-        <!--   <input type="text" id="imagen"  placeholder="url-imagen" defer /> -->
-        <input type="text" id="other" placeholder="other" />
-        <input type="text" id="other" placeholder="other" />
-        <input type="text" id="other" placeholder="other" />
-        <button class="btn btn-success" onclick="addService()"> <i class="fa fa-check fa-2x fa-fw"> </i>
-        </button>
-    </div>
-    
-<!-- machines -->
-    <div class="card">
-        <table class="table" id="datatable">
-            <thead class="thead-dark">
-            <tr>
-                <th>Imagen</th>
-                <th>Name</th>
-                <th>Model</th>
-                <th>State</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody id="table">
-
-            </tbody>
-        </table>
-    </div>
-
-<!-- services -->
-    <div class="card">
-        <table class="table" id="datatable">
-            <thead class="thead-dark">
-            <tr>
-                <th>Imagen</th>
-                <th>Service</th>
-                <th>Price</th>
-                <th>Comment</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody id="tableService">
-
-            </tbody>
-        </table>
-    </div>
-
-<!--others-->
-    <div class="card">
-        <table class="table" id="datatable">
-            <thead class="thead-dark">
-            <tr>
-                <th>other</th>
-                <th>other</th>
-                <th>other</th>
-            </tr>
-            </thead>
-            <tbody id="table">
-
-            </tbody>
-        </table>
-    </div>
-
 
 
     <footer id="fade-in-1">

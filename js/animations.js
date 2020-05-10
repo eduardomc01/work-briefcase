@@ -70,4 +70,16 @@ $(document).ready(function () {
 
 });
 
+// VISIT NOTIFICATIONS
+
+$(document).ready(function (){
+
+    $(".menu a li .notify").click(function (){
+
+       $(".notify").css("color","white");
+
+    });
+
+});
+
 

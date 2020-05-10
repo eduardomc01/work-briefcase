@@ -83,6 +83,7 @@ body {
 
 .card table {
     text-align: center;
+
 }
 
 .card table img {
@@ -185,7 +186,6 @@ display: none;
     cursor: pointer;
     text-align: center;
     width: 4%;
-
     z-index: 1;
 }
 
@@ -220,9 +220,14 @@ display: none;
     width: 80%;
 }
 
+.sign-out {
+    color: brown;
+}
+
+
 /* Inputs */
 input {
-    border: none;
+    border: 0;
     padding: 4%;
     width: 100%;
     outline: none;
@@ -236,6 +241,39 @@ footer .card {
     bottom: 0;
     position: relative;
 }
+
+.card .danger, .title {
+    float: right;
+    position: absolute;
+    right: 0;
+}
+
+.card .danger {
+    bottom: 0;
+}
+
+
+
+/* notifications */
+
+.notification {
+    background-color: gray;
+    position: fixed;
+    float: right;
+    right: 1%;
+    z-index: 1;
+}
+
+.left-register {
+    float: left;
+    width: 100%;
+}
+
+.left {
+    float: left;
+    width: 100%;
+}
+
 
 
 /* Responssive menu */
@@ -277,6 +315,8 @@ footer .card {
     font-size: 100%;
 }
 
+
+
 /* Projects */ 
 
 h3 {
@@ -298,10 +338,6 @@ h3 {
 
 .signIn input {
    font-size: 50px;
-}
-
-.sign-out {
-    color: brown;
 }
 
 .moveAppearDisappear .contact {
