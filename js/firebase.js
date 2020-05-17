@@ -76,17 +76,17 @@ function addRegister() {
         imagen: 'https://image.flaticon.com/icons/svg/2292/2292038.svg',
         name: name,
         model: model,
-        state: state
+        state: state,
+        delivery: "gray",
 
     }).then(function (docRef) {
 
         //style="background-color: red; border-radius: 100%; padding: 9%;"
 
-        $("#notification").css("color","yellow").css("border-radius","100%");
+        $("#notification").css("color", "yellow").css("border-radius", "100%");
 
         Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
         Notiflix.Notify.Success("Registro agregado !");
-
 
 
     }).catch(function (error) {
@@ -114,8 +114,8 @@ function addService() {
 
     }).then(function (docRef) {
 
-        
-        $("#notification").css("color","yellow").css("border-radius","100%");
+
+        $("#notification").css("color", "yellow").css("border-radius", "100%");
 
 
         Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
@@ -162,6 +162,24 @@ function deleteService(keyRef) {
 
 }
 
+
+function progressDelivery(keyRef, op) {
+
+
+    db.collection("users").doc(keyRef).update({
+
+        delivery: "green"
+
+    })
+        .then(function () {
+
+            Notiflix.Notify.Init({ position: "right-bottom", borderRadius: "1px", fontSize: "20px" });
+            Notiflix.Notify.Warning("Registro actualizado");
+
+        })
+
+};
+
 // LEER DATOS 
 
 $(document).ready(function () {
@@ -184,13 +202,22 @@ $(document).ready(function () {
 
             table.innerHTML += `
             <tr>
-               <td> <img src=' ${doc.data().imagen}'> </td>
+                <td> <img src=' ${doc.data().imagen}'> </td>
                 <td> ${doc.data().name} </td>
                 <td> ${doc.data().model} </td>
                 <td> ${doc.data().state} </td>
                 <td>
+                <div class="progressDelivery">
+                
+                <li class="delivery" style="background-color:${doc.data().delivery}" onClick="progressDelivery('${doc.id}')" > <i class="fa fa-check fa-fw" aria-hidden="true"></i></li>
+               
+                </div>
+                </td>
+               
+                <td>
                     <button class="btn btn-danger" onClick="deleteRegister('${doc.id}')" > <i class="fa fa-trash-o fa-2x"> </i> </button>
                 </td>
+               
             </tr>
             `
         });
@@ -249,3 +276,5 @@ $(document).ready(function () {
     });
 
 });
+
+

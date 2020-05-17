@@ -274,6 +274,22 @@ footer .card {
     width: 100%;
 }
 
+/* progress bar */
+
+.progressDelivery li {
+    display: inline;
+    border-radius:  50px;
+    color:white;
+    cursor: pointer;
+    padding: 2%;
+    margin: 1%;
+}
+
+.progressDelivery ul {
+    padding: 2%;
+}
+
+
 
 
 /* Responssive menu */
