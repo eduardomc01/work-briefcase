@@ -1,11 +1,22 @@
+import { initializeApp } from '../js/firebase/app';
+import 'js/firebase/auth'; // Importa los módulos que necesitas
+import 'js/firebase/firestore'; // ... otros módulos
 
-firebase.initializeApp({
-    apiKey: 'AIzaSyD6D7MgiHx3_yyirQshet8z-OjM1dO9Hgk',
-    authDomain: 'infobitmx-27ef4.firebaseapp.com',
-    projectId: 'infobitmx-27ef4'
+
+const firebaseapp = initializeApp({
+
 });
 
-var db = firebase.firestore();
+
+/*
+//var db = firebaseapp.firestore();
+
+function test(){
+
+    log('hola')
+}
+
+
 
 function signIn(event) {
 

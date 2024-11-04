@@ -1,0 +1,7 @@
+#files ignored before to add github
+
+*.ts
+*.json
+node_modules
+apiKey
+.env
