@@ -127,6 +127,12 @@ z-index: 1;
     box-shadow: 2px 2px 2px 2px rgba(88, 41, 126, 0.554);
 }
 
+.currently {
+
+    background-color: goldenrod;
+    box-shadow: 2px 2px 2px 2px rgba(88, 41, 126, 0.554);
+}
+
 /* Main logo */
 
 .logo-main {
